@@ -1,0 +1,159 @@
+input::-webkit-input-placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.4;
+    
+}
+
+input:-ms-input-placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.4;
+    
+}
+
+input:-moz-placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.4;
+    
+}
+
+input::-moz-placeholder {
+    font-family: 'Space Grotesk', sans-serif;
+    opacity: 0.4;
+    
+}
+  
+
+
+
+.sub_main2{
+    padding: 0 12px;
+    display: flex;
+    & .main_form{
+        margin: auto;
+        width: fit-content;
+        & form {
+            max-width: 380px;
+            display: grid;
+            row-gap:  20px;
+            column-gap: 16px;
+            & label{
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
+
+            & .form-item{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                &:has(#card-name),&:has(#card-number) {
+                    grid-column: 1/span 2;
+                }
+                &:has(#card-month){
+                    & .card-date{
+                        display: flex;
+                        width: 100%;
+                        gap:10px;
+                        & div {
+                            width: 50%;
+                            & #card-month, #card-year{
+                                box-sizing: border-box;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                }
+
+                & input{
+                    font-family: 'Space Grotesk', sans-serif;
+                    padding: 12px;
+                    font-size: 16px;
+                    border-radius: 10px;
+                    border: 2px solid rgba(0, 0, 0, 0.1);
+                    &:focus{
+                        outline: none;
+                        border: double 2px transparent;
+                        border-radius: 10px;
+                        background-image: linear-gradient(white, white), 
+                                          linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+                        background-origin: border-box;
+                        background-clip: padding-box, border-box;
+                    }
+                    &.error{
+                        border: 2px solid hsl(0, 100%, 66%);
+                    }
+                }
+                
+                & .error-message{
+                    margin: 0;
+                    font-size: 12px;
+                    color: hsl(0, 100%, 66%);
+                }
+            }
+
+            & .submit-button{
+                font-family: 'Space Grotesk', sans-serif;
+                font-size: 16px;
+                grid-column: 1/3;
+                text-align: center;
+                padding: 16px;
+                background-color: hsl(278, 68%, 11%);
+                color: white;
+                border-radius: 12px;
+            }
+        }
+    }
+    & .success_form{
+        margin: auto;
+        width: 412px;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        & .icon {
+            max-width: 60px;
+            margin-bottom: 16px;
+        }
+        & h1, p{
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+
+        }
+        & p {
+            font-size: 14px;
+            color: hsl(279, 6%, 55%);
+        }
+        & h1 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        & .continue-button{
+            width: 100%;
+            margin-top: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            grid-column: 1/3;
+            text-align: center;
+            padding: 16px;
+            background-color: hsl(278, 68%, 11%);
+            color: white;
+            border-radius: 12px;
+        }
+
+
+    }
+}
+
+@media screen and (min-width: 960px){
+
+    .sub_main2{
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+}
